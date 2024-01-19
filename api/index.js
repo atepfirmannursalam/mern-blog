@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import helmet from "helmet";
 import dotenv from "dotenv";
+import userRoutes from "./routes/User.route.js";
 
 // Memuat variabel lingkungan dari file .env
 dotenv.config();
@@ -30,9 +31,10 @@ db.once("open", () => {
   console.log("MongoDB is Connected");
 });
 
-// Definisi route atau endpoint di sini
-
 // Menjalankan server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+// Definisi route atau endpoint di sini
+app.use("/api/user", userRoutes);
