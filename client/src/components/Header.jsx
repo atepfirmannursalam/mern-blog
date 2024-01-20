@@ -13,7 +13,7 @@ export default function Header() {
         Blog
       </Link>
       <form>
-        <TextInput type="text" placeholder="search..." rightIcon={AiOutlineSearch} className="hidden md:inline " />
+        <TextInput type="text" placeholder="search..." id="search" rightIcon={AiOutlineSearch} className="hidden md:inline " />
       </form>
       <Button className="w-12 h-10 md:hidden" color="gray" pill>
         <AiOutlineSearch />
