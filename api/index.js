@@ -2,7 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import helmet from "helmet";
 import dotenv from "dotenv";
-import userRoutes from "./routes/User.route.js";
+import userRoutes from "./routes/user.route.js";
+import authRoutes from "./routes/auth.route.js";
 
 // Memuat variabel lingkungan dari file .env
 dotenv.config();
@@ -13,7 +14,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware keamanan menggunakan Helmet
 app.use(helmet());
 
-// Middleware untuk parsing body dari request
+// Middleware untuk parsing body dari request json input
 app.use(express.json());
 
 // Menghubungkan ke MongoDB
@@ -38,3 +39,4 @@ app.listen(PORT, () => {
 
 // Definisi route atau endpoint di sini
 app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
