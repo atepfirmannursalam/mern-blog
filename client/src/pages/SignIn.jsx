@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signInStart, signInSuccess, signInFailure } from "../redux/user/userSlice";
+import OAuth from "../components/OAuth";
 
 export default function SignIn() {
   // add functionality handle change form
@@ -77,7 +78,7 @@ export default function SignIn() {
               <Label value="Password" />
               <TextInput type="password" placeholder="Password" id="password" onChange={handleChange} />
             </div>
-            <Button gradientDuoTone="purpleToBlue" type="submit" disabled={loading}>
+            <Button gradientDuoTone="purpleToBlue" type="submit" disabled={loading} outline>
               {loading ? (
                 <>
                   <Spinner size="sm" />
@@ -87,6 +88,7 @@ export default function SignIn() {
                 "Sign In"
               )}
             </Button>
+            <OAuth />
           </form>
           <div className="flex text-sm gap-2 mt-5">
             <span>Dont have an Account ?</span>
