@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <Navbar className="border-b-2">
-      <Link to="/" className="self-center whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white">
+      <Link to="/" className="self-center whitespace-nowrap text-lg md:text-xl font-semibold dark:text-white">
         <span className="px-2 py-1 bg-gradient-to-r from-cyan-600 via-purple-700 to bg-pink-700 rounded-md text-white">Firman</span>
         Blog
       </Link>
@@ -19,7 +19,7 @@ export default function Header() {
         <AiOutlineSearch />
       </Button>
       <div className="flex gap-2 md:order-2">
-        <Button className="w-12 h-8 sm:inline" color="gray" pill>
+        <Button className="w-12 h-8 hidden md:inline" color="gray" pill>
           <FaMoon />
         </Button>
         <Link to="/sign-in">
